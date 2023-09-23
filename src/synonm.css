@@ -1,0 +1,96 @@
+.main{
+    height: 100vh;
+    background-color: black;
+    color: blueviolet;
+    position: relative;
+    overflow: hidden;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    padding-top: 10px;
+    /* position: relative; */
+}
+.main input{
+    outline: none;
+    height: 20px;
+}
+.synonyms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.btn{
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+}
+.btn:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.reset-btn{
+    background-color: rgba(255, 0, 0, 0.703);
+}
+.synonyms ul{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-height: 400px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 5px 10px;
+}
+.synonyms ul li{
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    background-color: mintcream;
+    padding: 3px 10px;
+    border-radius: 30px;
+}
+.synonyms ul li:hover{
+    outline-offset: 2px;
+    outline: 2px blueviolet solid;
+}
+.synonyms ul li:active, .synonyms ul li:focus{
+    outline-offset: 2px;
+    outline: 2px blueviolet solid;
+}
+.skeleton{
+    height: 21px;
+    width: 60px;
+    border-radius: 30px;
+    cursor: none;
+    animation: skeleton 1s linear infinite alternate;
+}
+@keyframes skeleton {
+    0%{
+        background-color: mintcream;
+    }
+    100%{
+        background-color: rgb(107, 107, 107);
+    }
+}
+::-webkit-scrollbar {
+    width: 5px;
+  }
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+  }
+@media screen and (width <= 450px){
+    .form{
+        flex-direction: column;
+    }
+}

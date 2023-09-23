@@ -6,6 +6,7 @@ function Synonym() {
   const [synonyms, setSynonyms] = useState([]);
 
   const getSynonym = (word) => {
+    console.log("l");
     setSynonyms(undefined)
     setTimeout(() => {
       fetch(`https://api.datamuse.com/words?rel_syn=${word}`)
@@ -20,17 +21,23 @@ function Synonym() {
     getSynonym(word)
   }
 
-  const currentSynonyms = (synonm) => {
+  const currentSynonyms = (e, synonm) => {
+    e.preventDefault()
     setWord(synonm)
     getSynonym(synonm)
+  }
+
+  const reset = () => {
+    setWord(""); 
+    setSynonyms([])
   }
 
   return (
     <div className='main'>
       <form onSubmit={(e) => submit(e, word)} className='form'>
         <input id="word" placeholder="Enter a word" value={word} onChange={(e) => setWord(e.target.value)}></input>
-        <button className="submit-btn btn">Submit</button>
-        <button className="reset-btn btn" onClick={() => {setWord(""); setSynonyms([])}}>Reset</button>
+        <button className="submit-btn btn" type="submit">Submit</button>
+        <button className="reset-btn btn" type="button" onClick={reset}>Reset</button>
       </form>
       <div className='synonyms'>
         <div>
@@ -41,7 +48,7 @@ function Synonym() {
             {!synonyms && Array.from({ length: 5 }, (_, index) => (
               <li key={index} className='skeleton' />
             ))}
-            {synonyms && synonyms.map(syn => <li key={syn.score} onClick={(e) => currentSynonyms(syn.word)}>{syn.word}</li>)}
+            {synonyms && synonyms.map(syn => <li key={syn.score} onClick={(e) => currentSynonyms(e, syn.word)}>{syn.word}</li>)}
           </ul>
         </div>
       </div>

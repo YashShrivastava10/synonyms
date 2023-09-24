@@ -6,13 +6,18 @@ function Synonym() {
   const [synonyms, setSynonyms] = useState([]);
 
   const getSynonym = (word) => {
-    console.log("l");
     setSynonyms(undefined)
     setTimeout(() => {
       fetch(`https://api.datamuse.com/words?rel_syn=${word}`)
       .then(response => response.json())
-      .then(data => setSynonyms(data))
-      .catch(error => {setSynonyms([]); alert("Some error occured")})
+      .then(data => {
+        setSynonyms(data)
+        if(data.length === 0) alert("Enter a valid word")
+      })
+      .catch(error => {
+        setSynonyms([])
+        alert("Some error occured")
+      })
     }, 3000)
   }
 
@@ -36,8 +41,8 @@ function Synonym() {
     <div className='main'>
       <form onSubmit={(e) => submit(e, word)} className='form'>
         <input id="word" placeholder="Enter a word" value={word} onChange={(e) => setWord(e.target.value)}></input>
-        <button className="submit-btn btn" type="submit">Submit</button>
-        <button className="reset-btn btn" type="button" onClick={reset}>Reset</button>
+        <button className="submit-btn btn" type="submit" disabled={word.trim() === ""}>Submit</button>
+        <button className="reset-btn btn" type="button" onClick={reset} disabled={word.trim() === ""}>Reset</button>
       </form>
       <div className='synonyms'>
         <div>

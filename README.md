@@ -13,7 +13,7 @@ The Synonym allows users to search for synonyms of a given word using the Datamu
 
 ## Demo
 
-[Play the Live Demo](https://yashshrivastava10.github.io/synonyms/)
+[Synonyms](https://yashshrivastava10.github.io/synonyms/)
 
 ## Features
 
@@ -30,12 +30,12 @@ To run this project locally, follow these steps:
 ```
 # 1. Clone the repository:
 ```
-git clone https://github.com/your-username/react-memory-game.git
+git clone https://github.com/YashShrivastava10/synonyms.git
 ```
 
 # 2. Navigate to the project directory:
 ```
-cd react-memory-game
+cd synonyms
 ```
 
 # 3. Install dependencies:

@@ -27,23 +27,23 @@ The Synonym allows users to search for synonyms of a given word using the Datamu
 
 To run this project locally, follow these steps:
 
-```
-# 1. Clone the repository:
+
+### 1. Clone the repository:
 ```
 git clone https://github.com/YashShrivastava10/synonyms.git
 ```
 
-# 2. Navigate to the project directory:
+### 2. Navigate to the project directory:
 ```
 cd synonyms
 ```
 
-# 3. Install dependencies:
+### 3. Install dependencies:
 ```
 npm install
 ```
 
-# 4. Start the development server:
+### 4. Start the development server:
 ```
 npm start
 ```

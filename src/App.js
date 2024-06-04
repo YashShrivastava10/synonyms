@@ -1,4 +1,4 @@
-import Synonym from "./synonym";
+import Synonym from "./Synonym";
 
 function App() {
   return (

@@ -39,7 +39,7 @@
     border-radius: 5px;
     letter-spacing: 0.5px;
 }
-.btn:hover{
+.btn:hover:not(:disabled){
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }

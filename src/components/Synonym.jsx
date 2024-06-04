@@ -1,7 +1,7 @@
-import "./synonm.css"
-import { ShowSynonym } from './components/ShowSynonym';
-import { Skeleton } from './components/Skeleton';
-import { useSynonyms } from "./hooks/useSynonyms";
+import "../synonm.css"
+import { ShowSynonym } from './ShowSynonym';
+import { Skeleton } from './Skeleton';
+import { useSynonyms } from "../hooks/useSynonyms";
 
 function Synonym() {
 

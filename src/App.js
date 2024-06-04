@@ -1,4 +1,4 @@
-import Synonym from "./Synonym";
+import Synonym from "./components/Synonym";
 
 function App() {
   return (

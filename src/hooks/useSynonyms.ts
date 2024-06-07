@@ -2,10 +2,10 @@ import { useState } from "react";
 
 export const useSynonyms = () => {
 
-  const [word, setWord] = useState('');
-  const [synonyms, setSynonyms] = useState([]);
+  const [word, setWord] = useState<string>('');
+  const [synonyms, setSynonyms] = useState<[] | undefined>([]);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSynonyms(prevState => {
       const { value } = e.target
       setWord(value)
@@ -13,7 +13,7 @@ export const useSynonyms = () => {
     })
   }
 
-  const getSynonym = (word) => {
+  const getSynonym = (word: string) => {
 
     setSynonyms(undefined)
 
@@ -41,13 +41,12 @@ export const useSynonyms = () => {
     }, 1000)
   }
 
-  const submit = (e, word) => {
+  const submit = (e: React.FormEvent, word: string) => {
     e.preventDefault()
     getSynonym(word)
   }
 
-  const currentSynonyms = (e, synonm) => {
-    e.preventDefault()
+  const currentSynonyms = (synonm: string) => {
     setWord(synonm)
     getSynonym(synonm)
   }
